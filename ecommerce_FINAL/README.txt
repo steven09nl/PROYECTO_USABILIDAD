@@ -16,16 +16,4 @@ Estructura:
 - js/layout.js: navegación compartida.
 - js/app.js: lógica, validaciones, modales y persistencia local.
 
-Ejecución:
-1. Descomprime el archivo ZIP.
-2. Abre index.html en un navegador actualizado.
-3. Usa el enlace "Vendedor" para acceder a las pantallas de gestión.
-4. Las compras y los registros se guardan en localStorage del navegador.
 
-Nota: es un prototipo del lado del navegador, sin servidor ni base de datos remota. El método de pago es contra entrega, tal como indica el prototipo. Los productos y precios son datos de demostración que pueden modificarse en js/data.js.
-
-ACTUALIZACIÓN VISUAL
-- Identidad URBANO MEN con paleta negra, marfil y dorado cálido.
-- Fotografías de prendas generadas para el prototipo y banner de colección.
-- Icono de usuario en la parte superior derecha con menú de registro, inicio de sesión y mis pedidos.
-- Inicio con categorías y productos destacados.
