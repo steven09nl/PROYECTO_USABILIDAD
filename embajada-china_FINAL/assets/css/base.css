@@ -1,0 +1,48 @@
+/* Variables, reinicio y tipografía */
+:root {
+  --tinta: #16231f;
+  --tinta-suave: #3b4a45;
+  --laca: #b3262b;
+  --laca-oscura: #8f1b20;
+  --jade: #2f5d50;
+  --arroz: #eceee8;
+  --papel: #f8f9f5;
+  --linea: #c9cfc6;
+  --laton: #a8803a;
+  --exito: #2f6b4f;
+  --radio: 4px;
+  --fuente-titulo: "Noto Serif SC", "Songti SC", Georgia, serif;
+  --fuente-texto: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--tinta);
+  background: var(--papel);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1; }
+h1, h2, h3 { font-family: var(--fuente-titulo); line-height: 1.2; margin: 0 0 .5em; font-weight: 700; }
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 1em; max-width: 62ch; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+ul { margin: 0; padding: 0; list-style: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--laton); outline-offset: 2px; }
+.solo-lectores {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

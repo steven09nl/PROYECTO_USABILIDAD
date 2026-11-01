@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestionar pedidos | Embajada China</title>
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/layout.css"><link rel="stylesheet" href="../assets/css/components.css"><link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-root="../" data-nav="">
+<div id="site-header"></div>
+<nav class="migas contenedor" id="migas" aria-label="Ruta de navegación"></nav>
+<main id="main">
+<div class="contenedor pagina">
+  <div class="pagina__intro"><h1>Gestionar pedidos</h1><p>Consulta los pedidos de los clientes y actualiza su estado durante la preparación.</p></div>
+  <section id="acceso" aria-labelledby="acceso-t">
+    <form class="acceso" id="form-acceso">
+      <h2 id="acceso-t">Acceso del vendedor</h2>
+      <div class="campo"><label for="usuario">Usuario</label><input id="usuario" autocomplete="username" required></div>
+      <div class="campo"><label for="clave">Contraseña</label><input id="clave" type="password" autocomplete="current-password" required></div>
+      <p class="campo__error" id="error-acceso" role="alert"></p>
+      <button class="boton boton--primario" type="submit">Ingresar</button>
+    </form>
+  </section>
+  <section id="modulo" hidden>
+    <div class="vendedor__barra">
+      <div class="campo"><label for="f-numero">Número de pedido</label><input id="f-numero" inputmode="numeric"></div>
+      <div class="campo"><label for="f-cliente">Cliente</label><input id="f-cliente"></div>
+      <div class="campo"><label for="f-estado">Estado</label><select id="f-estado"></select></div>
+      <button type="button" class="boton" id="salir">Cerrar sesión</button>
+    </div>
+    <div class="vendedor__grid">
+      <div id="lista-pedidos" aria-live="polite"></div>
+      <div class="detalle-pedido" id="detalle-pedido" aria-live="polite"></div>
+    </div>
+  </section>
+</div>
+</main>
+<div id="site-footer"></div>
+<script src="../assets/js/core/util.js"></script><script src="../assets/js/core/almacen.js"></script><script src="../assets/js/data/menu.js"></script><script src="../assets/js/data/reservas.js"></script><script src="../assets/js/components/modal.js"></script><script src="../assets/js/components/carrito.js"></script><script src="../assets/js/components/pedidos.js"></script><script src="../assets/js/components/busqueda.js"></script><script src="../assets/js/core/layout.js"></script><script src="../assets/js/pages/vendedor.js"></script>
+</body>
+</html>

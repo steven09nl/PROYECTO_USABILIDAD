@@ -1,0 +1,130 @@
+/* Estilos por página */
+
+/* Inicio */
+.portada { background: var(--arroz); border-bottom: 1px solid var(--linea); }
+.portada__fila { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; padding-block: clamp(2.5rem, 7vw, 5rem); }
+.portada h1 { margin-bottom: .4em; }
+.portada p { font-size: 1.15rem; color: var(--tinta-suave); }
+.portada__botones { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.portada__sello { padding: 1rem; }
+.seccion { padding-block: 3rem; }
+.seccion + .seccion { border-top: 1px solid var(--linea); }
+.cinta-categorias { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.cinta-categorias a { padding: .45rem 1rem; border: 2px solid var(--laca); border-radius: var(--radio); text-decoration: none; font-weight: 500; background: #fff; }
+.cinta-categorias a:hover { background: var(--laca); color: #fff; }
+.dos-columnas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+.dos-columnas > div { padding-top: 1rem; border-top: 3px solid var(--jade); }
+
+/* Menú: botones de categoría */
+.categorias { display: grid; grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr)); gap: 1rem; }
+.categorias a {
+  display: grid; place-items: center; min-height: 5rem; padding: 1rem; text-align: center;
+  font-family: var(--fuente-titulo); font-weight: 600; font-size: 1.15rem; text-decoration: none;
+  background: #fff; border: 2px solid var(--laca); border-radius: var(--radio);
+}
+.categorias a:hover { background: var(--laca); color: #fff; }
+
+/* Categoría: lista de productos */
+.productos { display: grid; gap: 1rem; }
+.producto-fila { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.25rem; align-items: center; padding: .9rem; background: #fff; border: 1px solid var(--linea); border-radius: var(--radio); }
+.producto-fila img { width: 7.5rem; height: 7.5rem; object-fit: cover; }
+.producto-fila__nombre { font-family: var(--fuente-titulo); font-size: 1.2rem; font-weight: 600; color: var(--jade); text-decoration: underline dashed; text-underline-offset: 4px; }
+.producto-fila__precio { margin: .25rem 0 0; font-weight: 600; font-size: 1.1rem; }
+.sin-productos { padding: 2rem; border: 2px dashed var(--linea); border-radius: var(--radio); background: #fff; }
+.sin-productos p { margin: 0 0 1rem; }
+
+/* Detalle de producto */
+.detalle { display: grid; grid-template-columns: minmax(0, 26rem) 1fr; gap: 2.5rem; align-items: start; }
+.galeria__principal { width: 100%; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--linea); }
+.galeria__miniaturas { display: flex; gap: .6rem; margin-top: .6rem; }
+.galeria__miniaturas button { padding: 0; width: 4.5rem; height: 4.5rem; border: 2px solid var(--linea); background: #fff; }
+.galeria__miniaturas button[aria-current="true"] { border-color: var(--laca); }
+.galeria__miniaturas img { width: 100%; height: 100%; object-fit: cover; }
+.detalle__precio { font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; }
+.detalle__cantidad { margin-bottom: 1.5rem; }
+.detalle__cantidad p { margin: 0 0 .35rem; font-weight: 600; }
+.detalle__descripcion { margin-top: 1.5rem; }
+.detalle__descripcion h2 { font-size: 1.15rem; }
+
+/* Reservas */
+.reserva-form { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: end; max-width: 46rem; }
+.reserva-form .boton { grid-column: 1 / -1; justify-self: start; }
+.mesas { margin-top: 2.5rem; max-width: 46rem; padding-top: 1.5rem; border-top: 3px solid var(--jade); }
+.mesas__lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; padding: 0; border: 0; }
+.mesa { position: relative; }
+.mesa input { position: absolute; opacity: 0; }
+.mesa label { display: grid; gap: .15rem; padding: 1rem; background: #fff; border: 2px solid var(--jade); border-radius: var(--radio); cursor: pointer; }
+.mesa__nombre { font-family: var(--fuente-titulo); font-weight: 700; font-size: 1.1rem; }
+.mesa__estado { font-size: .88rem; color: var(--tinta-suave); }
+.mesa input:checked + label { background: var(--jade); color: #fff; }
+.mesa input:checked + label .mesa__estado { color: #dfe9e4; }
+.mesa input:focus-visible + label { outline: 3px solid var(--laton); outline-offset: 2px; }
+.mesa input:disabled + label { opacity: .5; cursor: not-allowed; border-style: dashed; border-color: var(--linea); }
+
+/* Contacto */
+.contacto { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.contacto__datos div { padding: .75rem 0; border-bottom: 1px solid var(--linea); }
+.contacto__datos dt { font-weight: 600; }
+.contacto__datos dd { margin: 0; color: var(--tinta-suave); }
+.contacto form { display: grid; gap: 1rem; }
+.aviso-envio { padding: .8rem 1rem; background: #e3efe9; border-left: 4px solid var(--exito); }
+
+@media (max-width: 760px) {
+  .portada__fila, .detalle, .contacto, .dos-columnas { grid-template-columns: 1fr; }
+  .portada__sello { order: -1; justify-self: start; padding: .5rem; }
+  .reserva-form { grid-template-columns: 1fr; }
+  .producto-fila { grid-template-columns: 5.5rem 1fr; gap: .9rem; }
+  .producto-fila img { width: 5.5rem; height: 5.5rem; }
+  .nav a { padding: .7rem .9rem; }
+}
+
+/* Realizar pedido */
+.pedido__grid { display: grid; grid-template-columns: 1fr 22rem; gap: 2.5rem; align-items: start; }
+.pedido__lista { display: grid; gap: .9rem; }
+.pedido__item { display: grid; grid-template-columns: 5rem 1fr auto auto; gap: 1rem; align-items: center; padding: .8rem; background: #fff; border: 1px solid var(--linea); border-radius: var(--radio); }
+.pedido__item--problema { border-color: var(--laca); }
+.pedido__item img { width: 5rem; height: 5rem; object-fit: cover; }
+.pedido__item h3 { font-family: var(--fuente-texto); font-size: 1.05rem; margin: 0; }
+.pedido__item p { margin: 0; }
+.pedido__unitario { color: var(--tinta-suave); font-size: .92rem; }
+.pedido__subtotal { min-width: 5.5rem; text-align: right; }
+.pedido__panel { display: grid; gap: 1rem; padding: 1.25rem; background: var(--arroz); border-top: 3px solid var(--laca); position: sticky; top: 1rem; }
+.pedido__panel h2 { margin: 0; font-size: 1.3rem; }
+.pedido__total { display: flex; justify-content: space-between; align-items: baseline; font-size: 1.1rem; padding-top: .75rem; border-top: 1px solid var(--linea); }
+.pedido__total strong { font-size: 1.6rem; }
+.pedido__panel .boton { width: 100%; }
+.pedido__panel .campo input, .pedido__panel .campo textarea { border-color: var(--jade); }
+
+/* Vendedor */
+.acceso { max-width: 24rem; display: grid; gap: 1rem; }
+.acceso input { border-color: var(--jade); }
+.vendedor__barra { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; margin-bottom: 1.5rem; }
+.vendedor__barra .campo { min-width: 10rem; }
+.vendedor__barra .campo input, .vendedor__barra .campo select { border-color: var(--jade); }
+.vendedor__barra .boton { margin-left: auto; }
+.vendedor__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: start; }
+.tabla { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--linea); }
+.tabla th, .tabla td { padding: .7rem .8rem; text-align: left; border-bottom: 1px solid var(--linea); }
+.tabla thead th { background: var(--arroz); font-size: .92rem; }
+.tabla__boton { font-weight: 700; font-size: 1rem; }
+.tabla__fila--activa { background: #f3ece0; }
+.estado { display: inline-block; padding: .1rem .6rem; border-radius: 99px; font-size: .85rem; font-weight: 600; border: 1px solid currentColor; vertical-align: middle; }
+.estado--pendiente { color: #8a5a00; background: #fbf0d4; }
+.estado--en-preparacion { color: #1f4f8f; background: #e1ecfa; }
+.estado--listo { color: var(--exito); background: #e0f0e7; }
+.detalle-pedido { padding: 1.25rem; background: #fff; border: 1px solid var(--linea); border-top: 3px solid var(--jade); position: sticky; top: 1rem; }
+.detalle-pedido__datos div { display: flex; justify-content: space-between; gap: 1rem; padding: .35rem 0; }
+.detalle-pedido__datos dt { color: var(--tinta-suave); }
+.detalle-pedido__datos dd { margin: 0; font-weight: 600; text-align: right; }
+.detalle-pedido__items li { display: flex; justify-content: space-between; gap: 1rem; padding: .5rem 0; border-bottom: 1px dashed var(--linea); }
+.detalle-pedido__total { display: flex; justify-content: space-between; margin: 1rem 0; font-size: 1.1rem; }
+.estados { border: 0; padding: 0; margin: 1rem 0 0; display: grid; gap: .6rem; }
+
+@media (max-width: 860px) {
+  .pedido__grid, .vendedor__grid { grid-template-columns: 1fr; }
+  .pedido__panel, .detalle-pedido { position: static; }
+  .pedido__item { grid-template-columns: 4rem 1fr; }
+  .pedido__item img { width: 4rem; height: 4rem; }
+  .pedido__item .selector-cantidad, .pedido__subtotal { grid-column: 2; justify-self: start; }
+  .tabla { font-size: .92rem; }
+}

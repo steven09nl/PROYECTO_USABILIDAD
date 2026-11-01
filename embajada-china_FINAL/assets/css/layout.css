@@ -1,0 +1,45 @@
+/* Estructura general: cabecera, navegación, migas de pan, pie */
+.contenedor { width: min(1080px, 100% - 2rem); margin-inline: auto; }
+
+.cabecera { background: var(--tinta); color: var(--arroz); }
+.cabecera__fila { display: flex; align-items: center; justify-content: space-between; padding-block: .85rem; gap: 1rem; }
+.marca { display: flex; align-items: center; gap: .75rem; text-decoration: none; padding-left: 4px; }
+.marca__nombre { font-family: var(--fuente-titulo); font-weight: 700; font-size: 1.35rem; letter-spacing: .01em; }
+.cabecera__acciones { display: flex; gap: .4rem; }
+.icono-btn {
+  position: relative; display: grid; place-items: center;
+  width: 2.75rem; height: 2.75rem; border-radius: var(--radio);
+  background: transparent; border: 1px solid rgba(236,238,232,.35); color: var(--arroz);
+}
+.icono-btn:hover { background: rgba(236,238,232,.12); }
+.icono-btn svg { width: 1.3rem; height: 1.3rem; }
+.insignia {
+  position: absolute; top: -.4rem; right: -.4rem; min-width: 1.35rem; height: 1.35rem; padding-inline: .3rem;
+  border-radius: 99px; background: var(--laca); color: #fff; font-size: .75rem; font-weight: 600;
+  display: grid; place-items: center;
+}
+.insignia[hidden] { display: none; }
+
+.nav { background: var(--arroz); color: var(--tinta); border-bottom: 1px solid var(--linea); }
+.nav ul { display: flex; flex-wrap: wrap; }
+.nav a {
+  display: block; padding: .8rem 1.25rem; text-decoration: none; font-weight: 500;
+  border-bottom: 3px solid transparent; border-right: 1px solid var(--linea);
+}
+.nav li:first-child a { border-left: 1px solid var(--linea); }
+.nav a:hover { background: #fff; }
+.nav a[aria-current="page"] { border-bottom-color: var(--laca); font-weight: 600; }
+
+.migas { padding-block: 1rem .25rem; font-size: .92rem; color: var(--tinta-suave); }
+.migas ol { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0; padding: 0; list-style: none; }
+.migas li + li::before { content: ">"; margin-right: .35rem; color: var(--linea); }
+.migas a { color: var(--jade); }
+.migas [aria-current="page"] { color: var(--tinta); font-weight: 600; }
+
+.pagina { padding-block: 1.5rem 4rem; }
+.pagina__intro { margin-bottom: 1.75rem; }
+.pagina__intro p { color: var(--tinta-suave); }
+
+.pie { background: var(--tinta); color: var(--arroz); padding-block: 1.75rem; margin-top: auto; font-size: .92rem; }
+.pie__fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: center; }
+.pie a { color: var(--arroz); }
