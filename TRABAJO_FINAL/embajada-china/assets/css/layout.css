@@ -1,0 +1,94 @@
+/* Estructura general: cabecera, banner de página, migas, pie */
+.contenedor { width: min(1140px, 100% - 2rem); margin-inline: auto; }
+
+/* Cabecera fija: marca, navegación y acciones en una sola fila */
+.cabecera { position: sticky; top: 0; z-index: 20; background: #000; color: #fff; border-bottom: 3px solid var(--laca); }
+.cabecera__fila { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
+.marca { display: flex; align-items: center; gap: .75rem; text-decoration: none; margin-right: auto; }
+.marca__logo { width: 3.5rem; height: 3.5rem; border-radius: 50%; display: block; }
+.marca__nombre { font-family: var(--fuente-titulo); font-weight: 700; font-size: 1.3rem; letter-spacing: .02em; }
+.nav ul { display: flex; gap: .25rem; }
+.nav a { display: block; padding: .5rem .95rem; text-decoration: none; font-size: .85rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; border-bottom: 2px solid transparent; }
+.nav a:hover { color: var(--laton); }
+.nav a[aria-current="page"] { border-bottom-color: var(--laca); color: var(--laton); }
+.cabecera__acciones { display: flex; gap: .4rem; }
+.icono-btn { position: relative; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: transparent; border: 1px solid rgba(255,255,255,.3); color: #fff; }
+.icono-btn:hover { background: var(--laca); border-color: var(--laca); }
+.icono-btn svg { width: 1.2rem; height: 1.2rem; }
+.menu-btn { display: none; }
+.insignia { position: absolute; top: -.35rem; right: -.35rem; min-width: 1.3rem; height: 1.3rem; padding-inline: .3rem; border-radius: 99px; background: var(--laton); color: #111; font-size: .75rem; font-weight: 700; display: grid; place-items: center; }
+.insignia[hidden] { display: none; }
+
+/* Banner de las páginas internas */
+.banner { position: relative; background: radial-gradient(circle at 85% 20%, #3a0d10 0, #151515 55%); color: #fff; text-align: center; padding-block: 3rem calc(2.5rem + 26px); }
+.banner > .contenedor { position: relative; }
+.banner h1 { margin: 0 0 .35rem; font-size: clamp(2rem, 5vw, 3rem); }
+.banner h1::after { content: ""; display: block; width: 3.5rem; height: 3px; background: var(--laton); margin: .75rem auto 0; }
+.banner p { margin: .9rem auto 0; color: #d9d4c8; }
+.migas { margin-top: 1rem; font-size: .9rem; color: #bdb7aa; }
+.migas ol { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem; margin: 0; padding: 0; list-style: none; }
+.migas li + li::before { content: "/"; margin-right: .35rem; color: #77726a; }
+.migas a { color: var(--laton); }
+.migas [aria-current="page"] { color: #fff; font-weight: 600; }
+
+.pagina { padding-block: 3rem 5rem; }
+
+/* Pie de página */
+.pie { position: relative; background: #000; color: #d9d4c8; margin-top: auto; border-top: 3px solid var(--laca); }
+.pie__columnas { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.3fr; gap: 2rem; padding-block: calc(3rem + 26px) 3rem; }
+.pie h2 { font-size: .85rem; letter-spacing: .16em; text-transform: uppercase; color: var(--laton); font-family: var(--fuente-texto); margin-bottom: .75rem; }
+.pie p { margin: 0 0 .5rem; }
+.pie a { color: #fff; }
+.pie__marca { display: flex; align-items: center; gap: .9rem; font-family: var(--fuente-titulo); font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: .75rem; }
+.pie__marca img { border-radius: 50%; }
+.pie__enlaces { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; margin-top: .75rem; }
+.pie__derechos { border-top: 1px solid #2a2a2a; padding-block: 1.1rem; font-size: .88rem; color: #9a948a; text-align: center; }
+
+@media (max-width: 860px) {
+  .cabecera__fila { flex-wrap: wrap; gap: .5rem; min-height: 4rem; }
+  .menu-btn { display: grid; }
+  .nav { order: 3; width: 100%; display: none; }
+  .nav--abierto { display: block; }
+  .nav ul { flex-direction: column; padding-bottom: .75rem; }
+  .nav a { padding: .8rem .25rem; border-bottom: 1px solid #2a2a2a; }
+  .pie__columnas { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* Fondo y adornos de restaurante chino */
+body { background: #fbf8f2 url("../img/decor/enrejado.svg"); }
+.banner::before, .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("../img/decor/farol.svg"), url("../img/decor/farol.svg");
+  background-repeat: no-repeat; background-position: 5% 0, 93% 0; background-size: 3.2rem auto, 2.6rem auto; }
+.banner::after, .hero .greca, .pie::before { content: ""; position: absolute; left: 0; right: 0; height: 26px;
+  background: #0b0b0b url("../img/decor/greca.svg") repeat-x center; }
+.banner::after { bottom: 0; }
+.pie::before { top: 0; }
+@media (max-width: 860px) { .banner::before, .hero::after { display: none; } }
+.hero .greca { bottom: 0; }
+
+/* Submenús desplegables */
+.nav__item { position: relative; display: flex; align-items: center; }
+.nav__caret { display: none; }
+.nav__item--sub > a::after { content: ""; display: inline-block; margin-left: .45rem; vertical-align: middle; border: 4px solid transparent; border-top-color: currentColor; border-bottom: 0; }
+.nav .submenu { display: block; position: absolute; top: 100%; left: 0; min-width: 15.5rem; padding: .4rem 0; background: #0b0b0b;
+  border-top: 3px solid var(--laca); box-shadow: 0 16px 32px rgba(0,0,0,.45); opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: opacity .18s, transform .18s, visibility .18s; z-index: 30; }
+.nav .submenu a { padding: .6rem 1.2rem; font-size: .92rem; font-weight: 500; letter-spacing: .02em; text-transform: none; border: 0; }
+.nav .submenu a:hover { background: var(--laca); color: #fff; }
+.nav__item:hover > .submenu, .nav__item:focus-within > .submenu { opacity: 1; visibility: visible; transform: none; }
+:target, [id] { scroll-margin-top: 5.5rem; }
+
+@media (max-width: 860px) {
+  .nav__item { flex-wrap: wrap; }
+  .nav__item > a { flex: 1; }
+  .nav__item--sub > a::after { display: none; }
+  .nav__caret { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; background: none; border: 0; color: #fff; }
+  .nav__caret svg { width: 1.2rem; height: 1.2rem; transition: transform .2s; }
+  .nav__item--abierto .nav__caret svg { transform: rotate(180deg); }
+  .nav .submenu { display: none; position: static; width: 100%; opacity: 1; visibility: visible; transform: none; box-shadow: none; border-top: 0; background: #111; padding: 0 0 .4rem 1rem; }
+  .nav__item--abierto > .submenu { display: block; }
+  .nav__item:hover > .submenu { display: none; }
+  .nav__item--abierto:hover > .submenu { display: block; }
+  .nav a { border-bottom: 1px solid #2a2a2a; }
+  .nav .submenu a { border-bottom: 0; }
+}
