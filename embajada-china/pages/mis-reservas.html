@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mis reservas | Embajada China</title>
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css"><link rel="stylesheet" href="../assets/css/layout.css"><link rel="stylesheet" href="../assets/css/components.css"><link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-root="../" data-nav="reservas">
+<div id="site-header"></div>
+<section class="banner"><div class="contenedor"><h1>Mis reservas</h1><p>Consulta los datos de tu reserva con su número y tu teléfono.</p><nav class="migas" id="migas" aria-label="Ruta de navegación"></nav></div></section>
+<main id="main">
+<div class="contenedor pagina">
+  <div class="mis-pedidos">
+    <form class="buscar-pedido" id="form-buscar">
+      <div class="campo"><label for="b-numero">Número de reserva</label><input id="b-numero" placeholder="Ej. R-2001" required></div>
+      <div class="campo"><label for="b-telefono">Teléfono</label><input id="b-telefono" type="tel" inputmode="tel" required></div>
+      <button type="submit" class="boton boton--primario">Consultar</button>
+      <p class="campo__error" id="error-buscar" role="alert"></p>
+    </form>
+    <div id="lista" aria-live="polite"></div>
+  </div>
+</div>
+</main>
+<div id="site-footer"></div>
+<script src="../assets/js/core/util.js"></script><script src="../assets/js/core/almacen.js"></script><script src="../assets/js/data/menu.js"></script><script src="../assets/js/data/reservas.js"></script><script src="../assets/js/components/modal.js"></script><script src="../assets/js/components/carrito.js"></script><script src="../assets/js/components/pedidos.js"></script><script src="../assets/js/components/reservas.js"></script><script src="../assets/js/components/busqueda.js"></script><script src="../assets/js/core/layout.js"></script><script src="../assets/js/pages/mis-reservas.js"></script>
+</body>
+</html>
